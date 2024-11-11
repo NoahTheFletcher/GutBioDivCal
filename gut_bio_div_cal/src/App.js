@@ -9,6 +9,7 @@ import './App.css';
 function App() {
   const [images, setImages] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [resetAll, setResetAll] = useState(false);
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   // Fetch images from Pixabay based on user query
@@ -35,13 +36,16 @@ function App() {
     fetchImages(searchQuery);
   };
 
+  const handleClearAll = () => {
+    setResetAll(true);
+    setTimeout(() => setResetAll(false), 100); // Reset the toggle after clearing
+  };
+
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="App">
-        <h1>Plant Meal Tracker
-          
-        </h1>
-        
+        <h1>Search and Drag the Fruits and Vegetables into the Days of the Week</h1>
+
         {/* Search Bar */}
         <form onSubmit={handleSubmit} className="search-form">
           <input
@@ -52,6 +56,9 @@ function App() {
           />
           <button type="submit">Search</button>
         </form>
+
+        {/* Global Clear Button */}
+        <button onClick={handleClearAll} className="clear-all-button">Clear All Boxes</button>
 
         {/* Display Search Results as Draggable Images */}
         <div className="drag-area">
@@ -67,7 +74,7 @@ function App() {
         {/* Drop Area for Days of the Week */}
         <div className="drop-area">
           {daysOfWeek.map((day, index) => (
-            <DropBox key={index} id={index} label={day} />
+            <DropBox key={index} id={index} label={day} resetAll={resetAll} />
           ))}
         </div>
       </div>
