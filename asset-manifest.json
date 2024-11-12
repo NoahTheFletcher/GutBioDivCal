@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GutBioDivCal/static/css/main.d68ce52f.css",
+    "main.js": "/GutBioDivCal/static/js/main.4db90855.js",
+    "static/js/453.8b9801cf.chunk.js": "/GutBioDivCal/static/js/453.8b9801cf.chunk.js",
+    "index.html": "/GutBioDivCal/index.html",
+    "main.d68ce52f.css.map": "/GutBioDivCal/static/css/main.d68ce52f.css.map",
+    "main.4db90855.js.map": "/GutBioDivCal/static/js/main.4db90855.js.map",
+    "453.8b9801cf.chunk.js.map": "/GutBioDivCal/static/js/453.8b9801cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d68ce52f.css",
+    "static/js/main.4db90855.js"
+  ]
+}
